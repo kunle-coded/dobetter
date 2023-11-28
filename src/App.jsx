@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './ui/Home';
 import TodoItem from './ui/TodoItem';
-import TodoList from './ui/TodoList';
 import AppLayout from './ui/AppLayout';
+import TodoOverview from './ui/TodoOverview';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="app" element={<AppLayout />}>
-          <Route index element={<TodoList />} />
+          <Route index element={<TodoOverview />} />
           <Route path="todo/:id" element={<TodoItem />} />
         </Route>
       </Routes>

@@ -1,4 +1,9 @@
+import { useSelector } from 'react-redux';
+
 function TodoList() {
+  const { todos } = useSelector((store) => store.todos);
+  console.log('todos store', todos);
+
   return (
     <div className="relative flex max-w-full flex-col items-center justify-center bg-yellow-200">
       <h1>This is the Todo list</h1>

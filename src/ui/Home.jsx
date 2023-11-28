@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import { createUser } from '../todos/userSlice';
-import { addName, deleteName } from '../todos/formSlice';
+import { addName } from '../todos/formSlice';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -21,13 +21,12 @@ function Home() {
 
     if ((!name || name.length < 2) && !user.name) return;
 
-    if (user.name) {
-      navigate('/app');
-      return;
-    }
+    // if (user.name) {
+    //   navigate('/app');
+    //   return;
+    // }
     dispatch(createUser(name));
     navigate('/app');
-    dispatch(deleteName());
   }
 
   return (
